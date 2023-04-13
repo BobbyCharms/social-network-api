@@ -19,6 +19,7 @@ const reactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
+            get: timestamp => dateFormat(timestamp)
         },
     },
     {
@@ -28,9 +29,5 @@ const reactionSchema = new Schema(
         id: false,
     }
 );
-
-reactionSchema.virtual.("createdAt").get(function() {
-    return (this.createdAt.toLocaleTimeString() + "on" + this.createdAt.toLocaleTimeString());
-});
 
 module.exports = reactionSchema;
