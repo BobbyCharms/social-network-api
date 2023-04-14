@@ -76,7 +76,10 @@ module.exports = {
       { runValidators: true, new: true }
     )
       .then((dbThoughtData) => res.json(dbThoughtData))
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      })
   },
 
 // remove reaction

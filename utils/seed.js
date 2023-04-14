@@ -22,6 +22,10 @@ connection.once('open', async () => {
         {
             thoughtText: "I wonder if there are any bees around?",
             username: "Lily"
+        },
+        {
+          thoughtText: "I need water.",
+          username: "Lily"
         }
       ];
     
